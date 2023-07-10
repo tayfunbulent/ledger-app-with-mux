@@ -17,6 +17,18 @@ There are two roles as user and admin.
 - can get all users
 - can see the balances of all users
 
+### details:
+- The user cannot send money does not have. Balance cannot be negative.
+- The user can only have one account and balance with the same email.
+- If the user information is updated, a unique email should be used. Each email can have only one account.
+- If the users' role is not an admin, most of the services will not used.
+- If the user account is deleted, it will be deleted in the wallet with balance.
+- When creating an account, the password must be a minimum of 8 characters and contain both letters and numbers at the same time.
+- Except for creating a new account, all other services are authorized via the header.
+- If a transaction is interrupted, a rollback is performed.
+- All transactions are recorded. Any user's balance value from a time in the past can be retrieved this way.
+- There are three different tables in total. [Transactions, Users, Wallets]
+
 ## POST Methods
 ### /app/services/users/create
 ```
