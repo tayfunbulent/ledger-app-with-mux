@@ -1,7 +1,7 @@
-# ledger App with Go & Postgres
+# Ledger App with Go & Postgres
 There are two roles as user and admin.
 
-user:
+### user:
 - can create an account
 - can check balance
 - can deposit money into self account
@@ -9,7 +9,7 @@ user:
 - can view past transactions
 - can transfer money to another user
 
-admin:
+### admin:
 - can give admin role to users
 - can delete users
 - can update users' information
@@ -17,7 +17,8 @@ admin:
 - can get all users
 - can see the balances of all users
 
-## /app/services/users/create
+## POST Methods
+### /app/services/users/create
 ```
 curl --location 'http://localhost:8080/app/services/users/create' \
 --header 'Content-Type: application/json' \
@@ -28,7 +29,7 @@ curl --location 'http://localhost:8080/app/services/users/create' \
 }'
 ```
 
-## /app/services/wallets/update
+### /app/services/wallets/update
 ```
 curl --location 'http://localhost:8080/app/services/wallets/update' \
 --header 'email: test@test.com' \
@@ -39,7 +40,7 @@ curl --location 'http://localhost:8080/app/services/wallets/update' \
 }'
 ```
 
-## /app/services/transactions/create
+### /app/services/transactions/create
 ```
 curl --location 'http://localhost:8080/app/services/transactions/create' \
 --header 'email: test@test.com' \
@@ -51,7 +52,7 @@ curl --location 'http://localhost:8080/app/services/transactions/create' \
 }'
 ```
 
-## /app/services/users/update-user
+### /app/services/users/update-user
 ```
 curl --location 'http://localhost:8080/app/services/users/update-user' \
 --header 'email: test@test.com' \
@@ -67,7 +68,7 @@ curl --location 'http://localhost:8080/app/services/users/update-user' \
 }'
 ```
 
-## /app/services/users/delete-user
+### /app/services/users/delete-user
 ```
 curl --location 'http://localhost:8080/app/services/users/delete-user' \
 --header 'email: test@test.com' \
@@ -78,7 +79,7 @@ curl --location 'http://localhost:8080/app/services/users/delete-user' \
 }'
 ```
 
-## /app/services/users/update-user-role
+### /app/services/users/update-user-role
 ```
 curl --location 'http://localhost:8080/app/services/users/update-user-role' \
 --header 'email: test@test.com' \
@@ -90,7 +91,7 @@ curl --location 'http://localhost:8080/app/services/users/update-user-role' \
 }'
 ```
 
-## /app/services/wallets/update-wallet-balance-by-user-id/
+### /app/services/wallets/update-wallet-balance-by-user-id/
 ```
 curl --location 'http://localhost:8080/app/services/wallets/update-wallet-balance-by-user-id' \
 --header 'email: test@test.com' \
@@ -102,7 +103,7 @@ curl --location 'http://localhost:8080/app/services/wallets/update-wallet-balanc
 }'
 ```
 
-## /app/services/transactions/get-wallet-balance-at-time
+### /app/services/transactions/get-wallet-balance-at-time
 ```
 curl --location 'http://localhost:8080/app/services/transactions/get-wallet-balance-at-time' \
 --header 'email: test@test.com' \
@@ -113,50 +114,50 @@ curl --location 'http://localhost:8080/app/services/transactions/get-wallet-bala
     "time": "2023-06-25T03:00:00Z"
 }'
 ```
-
-## /app/services/wallets/get
+## GET Methods
+### /app/services/wallets/get
 ```
 curl --location 'http://localhost:8080/app/services/wallets/get' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/transactions/get
+### /app/services/transactions/get
 ```
 curl --location 'http://localhost:8080/app/services/transactions/get' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/users/get-all-users
+### /app/services/users/get-all-users
 ```
 curl --location 'http://localhost:8080/app/services/users/get-all-users' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/users/get-all-users-with-wallet
+### /app/services/users/get-all-users-with-wallet
 ```
 curl --location 'http://localhost:8080/app/services/users/get-all-users-with-wallet' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/wallets/get-all-wallets
+### /app/services/wallets/get-all-wallets
 ```
 curl --location 'http://localhost:8080/app/services/wallets/get-all-wallets' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/users/get-user-by-id/{id}
+### /app/services/users/get-user-by-id/{id}
 ```
 curl --location 'http://localhost:8080/app/services/users/get-user-by-id/5' \
 --header 'email: test@test.com' \
 --header 'password: 123456789test'
 ```
 
-## /app/services/wallets/get-wallet-by-id/{id}
+### /app/services/wallets/get-wallet-by-id/{id}
 ```
 curl --location 'http://localhost:8080/app/services/wallets/get-wallet-by-id/3' \
 --header 'email: test@test.com' \
